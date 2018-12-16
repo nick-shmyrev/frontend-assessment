@@ -8,7 +8,7 @@ import StudentItem from '../StudentItem/StudentItem';
 // Import styles
 import style from './StudentList.css';
 
-const StudentsList = ({ students }) => (
+export const StudentsList = ({ students }) => (
   <ul className={style['students-list']}>
     {
       students.length ?

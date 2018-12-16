@@ -5,7 +5,7 @@ import { setTextFilter, setTagFilter } from '../../actions/filters-actions';
 // Import styles
 import style from './StudentFilter.css';
 
-const StudentsFilter = (props) => {
+export const StudentFilter = (props) => {
   const onTextFilterChange = (e) => {
     const text = e.target.value;
     props.setTextFilter(text);
@@ -44,4 +44,4 @@ const mapDispatchToProps = dispatch => ({
   setTagFilter: tag => dispatch(setTagFilter(tag)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(StudentsFilter);
+export default connect(mapStateToProps, mapDispatchToProps)(StudentFilter);

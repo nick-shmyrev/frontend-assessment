@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StudentFilter component should render correctly 1`] = `
+<div
+  className="filters"
+>
+  <input
+    name="textFilter"
+    onChange={[Function]}
+    placeholder="Search by name"
+    type="text"
+  />
+  <input
+    name="tagFilter"
+    onChange={[Function]}
+    placeholder="Search by tag"
+    type="text"
+  />
+</div>
+`;

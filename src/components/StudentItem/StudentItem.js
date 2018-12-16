@@ -5,7 +5,7 @@ import { setStudentTag } from '../../actions/students-actions';
 // Import styles
 import style from './StudentItem.css';
 
-class StudentItem extends React.Component {
+export class StudentItem extends React.Component {
   state = {
     gradesShown: false,
   };
@@ -91,11 +91,8 @@ class StudentItem extends React.Component {
   }
 }
 
-const mapStateToProps = (state, props) => ({
-  tags: state.students.find(el => el.email === props.email).tags,
-});
 const mapDispatchToProps = dispatch => ({
   setStudentTag: (email, tag) => dispatch(setStudentTag(email, tag)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(StudentItem);
+export default connect(undefined, mapDispatchToProps)(StudentItem);

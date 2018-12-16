@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StudentItem component should render correctly 1`] = `
+<div
+  className="student-item"
+>
+  <div
+    className="flex flex-between"
+  >
+    <div
+      className="flex-container"
+    >
+      <img
+        alt="Ingaberg"
+        className="student-pic"
+        src="https://storage.googleapis.com/hatchways-app.appspot.com/assessments/data/frontend/images/voluptasdictablanditiis.jpg"
+      />
+      <div
+        className="student-details"
+      >
+        <h1
+          className="student-name"
+        >
+          Ingaberg
+           
+          Orton
+        </h1>
+        <div
+          className="student-details"
+        >
+          <p>
+            Email: 
+            iorton0@imdb.com
+          </p>
+          <p>
+            Company: 
+            Yadel
+          </p>
+          <p>
+            Skill: 
+            Oracle
+          </p>
+          <p>
+            Average: 
+            88.875
+            %
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      className="details-icon "
+      onClick={[Function]}
+    >
+      <div />
+      <div />
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StudentsList component should render with students provided 1`] = `
+<ul
+  className="students-list"
+>
+  <Connect(StudentItem)
+    city="Fushë-Muhurr"
+    company="Yadel"
+    email="iorton0@imdb.com"
+    firstName="Ingaberg"
+    grades={
+      Array [
+        "78",
+        "100",
+        "92",
+        "86",
+        "89",
+        "88",
+        "91",
+        "87",
+      ]
+    }
+    id="1"
+    key="iorton0@imdb.com"
+    lastName="Orton"
+    pic="https://storage.googleapis.com/hatchways-app.appspot.com/assessments/data/frontend/images/voluptasdictablanditiis.jpg"
+    skill="Oracle"
+  />
+  <Connect(StudentItem)
+    city="Sanghan"
+    company="Avamm"
+    email="cboards1@weibo.com"
+    firstName="Clarke"
+    grades={
+      Array [
+        "75",
+        "89",
+        "95",
+        "93",
+        "99",
+        "82",
+        "89",
+        "76",
+      ]
+    }
+    id="2"
+    key="cboards1@weibo.com"
+    lastName="Boards"
+    pic="https://storage.googleapis.com/hatchways-app.appspot.com/assessments/data/frontend/images/voluptasautreprehenderit.jpg"
+    skill="Sports"
+  />
+</ul>
+`;
+
+exports[`StudentsList component should render without students 1`] = `
+<ul
+  className="students-list"
+>
+  <p>
+    No students data to display...
+  </p>
+</ul>
+`;

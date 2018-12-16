@@ -8,5 +8,8 @@
   ],
   "setupFiles": [
     "<rootDir>/setupTests.js"
-  ]
+  ],
+  "moduleNameMapper": {
+    "\\.css$": "identity-obj-proxy"
+  }
 }
