@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { setStudentTag } from '../../actions/students-actions';
 
 // Import styles
 import style from './StudentItem.css';
@@ -24,6 +26,26 @@ class StudentItem extends React.Component {
     </div>
   );
   
+  handleTagSubmit = (e) => {
+    e.preventDefault();
+    
+    if (e.target['tagInput'].value.trim().length > 0) {
+      this.props.setStudentTag(this.props.email, e.target['tagInput'].value.trim());
+    }
+    e.target['tagInput'].value = '';
+  };
+  
+  renderTags = () => (
+    <div>
+      {this.props.tags.length > 0 && (
+        this.props.tags.map(tag => <div key={tag} className={style.tag}>{tag}</div>)
+      )}
+      <form onSubmit={this.handleTagSubmit}>
+        <input type="text" name="tagInput"/>
+      </form>
+    </div>
+  );
+  
   render() {
     return (
       <div className={style['student-item']}>
@@ -44,7 +66,12 @@ class StudentItem extends React.Component {
                 <p>Skill: {this.props.skill}</p>
                 <p>Average: {this.getAverage(this.props.grades)}%</p>
                 
-                {this.state.gradesShown && this.renderGrades()}
+                {this.state.gradesShown && (
+                  <div>
+                    {this.renderGrades()}
+                    {this.renderTags()}
+                  </div>
+                )}
                 
               </div>
             </div>
@@ -54,8 +81,8 @@ class StudentItem extends React.Component {
             className={[style['details-icon'], this.state.gradesShown ? style['details-icon-open'] : null].join(' ')}
             onClick={this.handleDetailsClick}
           >
-            <div></div>
-            <div></div>
+            <div/>
+            <div/>
           </div>
     
         </div>
@@ -64,4 +91,11 @@ class StudentItem extends React.Component {
   }
 }
 
-export default StudentItem;
+const mapStateToProps = (state, props) => ({
+  tags: state.students.find(el => el.email === props.email).tags,
+});
+const mapDispatchToProps = dispatch => ({
+  setStudentTag: (email, tag) => dispatch(setStudentTag(email, tag)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(StudentItem);

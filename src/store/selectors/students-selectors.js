@@ -1,10 +1,11 @@
 const getVisibleStudents = (students, filters) => {
-  const { text } = filters;
+  const { text, tag } = filters;
   
   return students.filter((student) => {
-    const fullName = `${student.firstName} ${student.lastName}`.toLowerCase();
+    const textFilter = (text.length > 0) ? `${student.firstName} ${student.lastName}`.toLowerCase().includes(text.toLowerCase()) : true;
+    const tagFilter = (tag.length > 0) ? student.tags.join(' ').toLowerCase().includes(tag.toLowerCase()) : true;
     
-    return fullName.includes(text.toLowerCase());
+    return textFilter && tagFilter;
   });
 };
 

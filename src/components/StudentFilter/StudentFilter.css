@@ -6,7 +6,7 @@
   width: auto;
 }
 
-input[name="textFilter"] {
+input[type="text"] {
   padding: 15px 5px;
   width: 100%;
   border: 0;

@@ -72,3 +72,13 @@
 .test-details {
   margin-top: 20px;
 }
+
+.tag {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 5px;
+  background-color: #ccc;
+  font-size: 16px;
+  color: #333;
+}

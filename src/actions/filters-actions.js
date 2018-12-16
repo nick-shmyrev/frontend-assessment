@@ -3,4 +3,9 @@ const setTextFilter = text => ({
   text,
 });
 
-export { setTextFilter };
+const setTagFilter = tag => ({
+  type: 'SET_TAG_FILTER',
+  tag,
+});
+
+export { setTextFilter, setTagFilter };

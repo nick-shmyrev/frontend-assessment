@@ -3,4 +3,10 @@ const setStudents = students => ({
   students,
 });
 
-export { setStudents };
+const setStudentTag = (email, tag) => ({
+  type: 'SET_STUDENT_TAG',
+  email,
+  tag,
+});
+
+export { setStudents, setStudentTag };
