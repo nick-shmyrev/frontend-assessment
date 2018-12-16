@@ -5,6 +5,9 @@ import axios from 'axios';
 import store from './store/redux-store';
 import { setStudents } from './actions/students-actions';
 
+// Import global styles
+import './styles/styles.css';
+
 // Import major components
 import DashboardPage from './components/DashboardPage/DashboardPage';
 

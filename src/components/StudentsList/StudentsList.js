@@ -4,8 +4,11 @@ import { connect } from 'react-redux';
 // Import components
 import StudentItem from '../StudentItem/StudentItem';
 
+// Import styles
+import style from './StudentList.css';
+
 const StudentsList = ({ students }) => (
-  <ul>
+  <ul className={style['students-list']}>
     {
       students.length ?
         students.map(student => <StudentItem student={student} key={student.email}/>) :
