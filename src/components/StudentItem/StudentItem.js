@@ -3,34 +3,65 @@ import React from 'react';
 // Import styles
 import style from './StudentItem.css';
 
-const StudentItem = ({ student }) => {
-  const getAverage = grades => (grades.reduce((a, c) => a + Number(c), 0) / grades.length);
-  const getFullName = ({ firstName, lastName }) => `${firstName} ${lastName}`;
+class StudentItem extends React.Component {
+  state = {
+    gradesShown: false,
+  };
   
-  return (
-    <div className={style['student-item']}>
-      <div className={style['flex-container']}>
-        
-        <img
-          src={student.pic}
-          alt={getFullName(student)}
-          className={style['student-pic']}
-        />
-        
-        <div className="student-details">
-          <h1 className={style['student-name']}>{getFullName(student)}</h1>
-          
-          <div className={style['student-details']}>
-            <p>Email: {student.email}</p>
-            <p>Company: {student.company}</p>
-            <p>Skill: {student.skill}</p>
-            <p>Average: {getAverage(student.grades)}%</p>
-          </div>
-        </div>
-        
-      </div>
+  getAverage = grades => (grades.reduce((a, c) => a + Number(c), 0) / grades.length);
+  
+  handleDetailsClick = () => {
+    this.setState(prevState => {
+      return { gradesShown: !prevState.gradesShown };
+    });
+  };
+  
+  renderGrades = () => (
+    <div className={style['test-details']}>
+      {this.props.grades.map((grade, index) => (
+        <p key={index}>Test{index + 1}&nbsp;&nbsp;&nbsp;&nbsp;{grade}</p>
+      ))}
     </div>
   );
-};
+  
+  render() {
+    return (
+      <div className={style['student-item']}>
+        <div className={[style.flex, style['flex-between']].join(' ')}>
+          <div className={style['flex-container']}>
+            <img
+              src={this.props.pic}
+              alt={this.props.firstName}
+              className={style['student-pic']}
+            />
+  
+            <div className="student-details">
+              <h1 className={style['student-name']}>{this.props.firstName} {this.props.lastName}</h1>
+    
+              <div className={style['student-details']}>
+                <p>Email: {this.props.email}</p>
+                <p>Company: {this.props.company}</p>
+                <p>Skill: {this.props.skill}</p>
+                <p>Average: {this.getAverage(this.props.grades)}%</p>
+                
+                {this.state.gradesShown && this.renderGrades()}
+                
+              </div>
+            </div>
+          </div>
+          
+          <div
+            className={[style['details-icon'], this.state.gradesShown ? style['details-icon-open'] : null].join(' ')}
+            onClick={this.handleDetailsClick}
+          >
+            <div></div>
+            <div></div>
+          </div>
+    
+        </div>
+      </div>
+    );
+  }
+}
 
 export default StudentItem;

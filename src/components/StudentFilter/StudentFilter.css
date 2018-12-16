@@ -1,0 +1,16 @@
+.filters {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  width: auto;
+}
+
+input[name="textFilter"] {
+  padding: 15px 5px;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #aaa;
+  font-size: 24px;
+  font-weight: 200;
+}

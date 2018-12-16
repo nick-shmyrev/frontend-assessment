@@ -3,6 +3,15 @@
   padding: 20px 40px;
 }
 
+.flex {
+  display: flex;
+  align-items: flex-start;
+}
+
+.flex-between {
+  justify-content: space-between;
+}
+
 .flex-container {
   display: flex;
   justify-content: flex-start;
@@ -27,8 +36,39 @@
 .student-details {
   padding-left: 30px;
 }
+
 .student-details p {
   margin: 0 0 5px;
   font-size: 18px;
   font-weight: 200;
+}
+
+.details-icon {
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+}
+
+.details-icon div {
+  width: 35px;
+  height: 4px;
+  background: #777;
+  border-radius: 3px;
+}
+
+.details-icon:hover div {
+  background: #000;
+}
+.details-icon div:first-child {
+  transform: translateY(17px);
+}
+.details-icon div:last-child {
+  transform: rotate(90deg) translateX(13px);
+}
+.details-icon-open div:last-child {
+  display: none;
+}
+
+.test-details {
+  margin-top: 20px;
 }
