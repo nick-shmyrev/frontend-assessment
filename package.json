@@ -1,8 +1,8 @@
 {
-  "name": "hatchways-app",
+  "name": "hatchways-front",
   "version": "1.0.0",
   "main": "app.js",
-  "repository": "git@github.com:nick-shmyrev/hatchways-app.git",
+  "repository": "git@github.com:nick-shmyrev/hatchways-front.git",
   "author": "Nick Shmyrev <nr.shmyrev@gmail.com>",
   "license": "MIT",
   "scripts": {
