@@ -1,4 +1,4 @@
-# Hatchways: Front-end Assessment
+# Front-end Assessment
 
 ## Setup
 
