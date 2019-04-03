@@ -10,6 +10,7 @@ const filtersReducer = (state = defaultState, action) => {
       
     case 'SET_TAG_FILTER':
       return {...state, tag: action.tag };
+      
     default:
       return state;
   }

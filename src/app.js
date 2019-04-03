@@ -16,7 +16,7 @@ ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
 
 // Load students data
 axios
-  .get('https://www.hatchways.io/api/assessment/students')
+  .get('https://fierce-woodland-41081.herokuapp.com/api/students')
   .then((res) => {
     const { students } = res.data;
     
