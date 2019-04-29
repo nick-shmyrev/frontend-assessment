@@ -1,5 +1,7 @@
 # Front-end Assessment
 
+Deployed to Surge: <a href="http://quack-support.surge.sh/" target="_blank">http://quack-support.surge.sh/</a>
+
 ## Setup
 
 - Clone the repo to your local machine.
